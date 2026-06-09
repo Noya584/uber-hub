@@ -119,7 +119,7 @@ export function RideCard({ member }: RideCardProps) {
         <Button
           variant="outline"
           className="w-full h-7 text-xs border-white/20 mt-2"
-          onClick={() => navigate('/select-member')}
+          onClick={() => navigate('/grupos/select-member')}
         >
           Pedir viaje
         </Button>

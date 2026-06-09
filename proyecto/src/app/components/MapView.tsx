@@ -1,8 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Wallet } from 'lucide-react';
-import { Button } from './ui/button';
 import { members, groups } from '../data/mockData';
-import { useNavigate } from 'react-router';
 
 // Ubicaciones reales en Santiago de Chile
 const memberLocations: Record<string, { lat: number; lng: number; destination?: { lat: number; lng: number } }> = {
@@ -29,7 +26,6 @@ const memberLocations: Record<string, { lat: number; lng: number; destination?: 
 export function MapView() {
   const mapRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<any>(null);
-  const navigate = useNavigate();
 
   useEffect(() => {
     if (!mapRef.current || mapInstanceRef.current) return;
@@ -216,14 +212,7 @@ export function MapView() {
         </div>
       </div>
 
-      {/* Botón gastos */}
-      <Button
-        className="absolute bottom-4 right-4 h-9 bg-black/80 backdrop-blur border border-white/20 hover:bg-white/10 z-[1000]"
-        onClick={() => navigate('/grupos')}
-      >
-        <Wallet className="w-4 h-4 mr-2" />
-        Ver gastos
-      </Button>
+
     </div>
   );
 }
